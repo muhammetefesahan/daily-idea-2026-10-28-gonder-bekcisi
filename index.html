@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gönder Bekçisi</title>
+<meta name="description" content="Mesajımı göndermeden önce yapıştırıyorum; unutulmuş kopya cümlelerini, doldurulmamış yerleri, yanlış hitabı ve yanlış gün-tarihi görüyorum.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230d0709'/%3E%3Cpath d='M8 2 3 4v4c0 3 2 5 5 6 3-1 5-3 5-6V4z' fill='%23ffcf3a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <h1>Gönder <span>Bekçisi</span></h1>
+    <p class="lead">Mesajımı göndermeden önce buraya yapıştırıyorum. Unutulmuş kopya cümlelerini, doldurulmamış yerleri, yanlış hitabı ve yanlış gün-tarihi görüyorum.</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <div class="cardHead">
+        <h2>Mesajım</h2>
+        <div class="tools">
+          <button id="bSample" type="button">Örnek koy</button>
+          <button id="bClear" type="button">Temizle</button>
+        </div>
+      </div>
+      <div class="two">
+        <label>Kime gidiyor?<input id="iKime" type="text" placeholder="ör. Ayşe Hoca" maxlength="60"></label>
+        <label class="chk"><input id="cEk" type="checkbox"> Eki ekledim</label>
+      </div>
+      <textarea id="tMsg" spellcheck="true" placeholder="Mesajımı buraya yapıştırıyorum…" aria-label="Mesaj"></textarea>
+      <div class="row">
+        <button id="bFix" type="button">🧹 Kolayları düzelt</button>
+        <button id="bCopy" type="button" class="main">Kopyala</button>
+      </div>
+      <p class="hint">Kolay olanları (kopya giriş cümlesi, çift boşluk, yıldız işaretleri) kendisi siliyor. Gerisini ben düzeltiyorum. Mesajım hiçbir yere gönderilmiyor.</p>
+    </section>
+
+    <section class="card">
+      <div class="verdict" id="verdict">–</div>
+      <h3>Bulduklarım</h3>
+      <ul class="issues" id="issues"></ul>
+      <h3>Mesajımda nerede?</h3>
+      <div class="preview" id="preview"></div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+</div>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>
